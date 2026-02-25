@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sherlock — Анализ цифрового следа</title>
+
+<meta name="description" content="Sherlock — сервис анализа цифрового следа и проверки публичной информации по номеру телефона и username." />
+<meta name="theme-color" content="#0b1220" />
+
+<style>
+:root{
+--bg:#0b1220;
+--panel:rgba(255,255,255,.05);
+--stroke:rgba(255,255,255,.10);
+--text:#eaf0ff;
+--muted:rgba(234,240,255,.7);
+--accent1:#2AABEE;
+--accent2:#7C3AED;
+--radius:22px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto;
+background:
+radial-gradient(900px 700px at 10% 10%,rgba(124,58,237,.25),transparent 60%),
+radial-gradient(900px 700px at 90% 30%,rgba(42,171,238,.2),transparent 60%),
+var(--bg);
+color:var(--text);
+}
+
+.wrap{
+max-width:1100px;
+margin:auto;
+padding:50px 20px 180px;
+}
+
+h1{font-size:44px;margin-bottom:20px}
+h2{font-size:28px;margin-bottom:20px;margin-top:0}
+p{line-height:1.7;color:var(--muted)}
+
+.hero{
+padding:70px 50px;
+background:var(--panel);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+margin-bottom:40px;
+}
+
+.hero p{font-size:18px;max-width:780px}
+
+.hero-cta{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.btn{
+padding:15px 28px;
+border-radius:16px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+transition:.25s ease;
+}
+
+.btnPrimary{
+color:#fff;
+background:linear-gradient(135deg,var(--accent1),var(--accent2));
+box-shadow:0 12px 30px rgba(42,171,238,.3);
+}
+
+.btnSecondary{
+color:var(--text);
+background:rgba(255,255,255,.08);
+border:1px solid var(--stroke);
+}
+
+.section{
+margin-top:40px;
+padding:55px;
+background:var(--panel);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+padding:25px;
+border-radius:20px;
+background:rgba(0,0,0,.25);
+border:1px solid var(--stroke);
+}
+
+.card h3{margin-top:0;margin-bottom:10px}
+
+.disclaimer{
+margin-top:60px;
+font-size:13px;
+color:rgba(255,255,255,.45);
+line-height:1.6;
+}
+
+/* MOBILE FIXED CTA */
+
+.mobile-cta{display:none;}
+
+@media (max-width:768px){
+
+.hero{padding:50px 25px}
+.hero-cta{display:none;}
+
+.mobile-cta{
+display:block;
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+padding:15px 20px calc(15px + env(safe-area-inset-bottom));
+background:rgba(11,18,32,.96);
+backdrop-filter:blur(10px);
+border-top:1px solid var(--stroke);
+z-index:999;
+}
+
+.mobile-cta a{
+display:block;
+padding:18px;
+border-radius:18px;
+font-weight:600;
+color:#fff;
+background:linear-gradient(135deg,var(--accent1),var(--accent2));
+text-decoration:none;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<section class="hero">
+<h1>Sherlock — проверка цифрового следа</h1>
+<p>
+Sherlock — инструмент анализа публичной информации, связанной с номером телефона или username. 
+Сервис помогает выявлять цифровые совпадения, оценивать потенциальные риски и принимать более взвешенные решения перед онлайн-сделками.
+</p>
+<p>
+Инструмент ориентирован на практическое применение: краткая структурированная сводка без лишней перегрузки данными.
+</p>
+
+<div class="hero-cta">
+<a class="btn btnPrimary" href="https://t.me/Xlocksherbot">Открыть Sherlock</a>
+<a class="btn btnSecondary" href="#how">Как работает</a>
+</div>
+</section>
+
+<section class="section">
+<h2>Что делает Sherlock</h2>
+<div class="grid">
+<div class="card">
+<h3>Проверка по номеру телефона</h3>
+<p>Анализ публичных сигналов и упоминаний, связанных с номером.</p>
+</div>
+<div class="card">
+<h3>Анализ username</h3>
+<p>Выявление цифровых следов по никнейму в открытых источниках.</p>
+</div>
+<div class="card">
+<h3>Структурированный отчёт</h3>
+<p>Краткая сводка, позволяющая быстро оценить ситуацию.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="how">
+<h2>Как работает Sherlock</h2>
+<div class="grid">
+<div class="card">
+<h3>1. Ввод данных</h3>
+<p>Пользователь указывает номер телефона или username для проверки.</p>
+</div>
+<div class="card">
+<h3>2. Автоматический анализ</h3>
+<p>Система анализирует открытые источники и сопоставляет сигналы.</p>
+</div>
+<div class="card">
+<h3>3. Получение сводки</h3>
+<p>Формируется структурированный отчёт для быстрой оценки рисков.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Для кого подходит сервис</h2>
+<div class="grid">
+<div class="card">
+<h3>Онлайн-покупатели</h3>
+<p>Дополнительная проверка перед переводом средств.</p>
+</div>
+<div class="card">
+<h3>Предприниматели</h3>
+<p>Предварительная оценка цифрового профиля контрагентов.</p>
+</div>
+<div class="card">
+<h3>Пользователи Telegram</h3>
+<p>Антискам-проверка новых контактов.</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Частые вопросы</h2>
+<div class="grid">
+<div class="card">
+<h3>Используются ли закрытые базы?</h3>
+<p>Нет. Sherlock анализирует только публично доступную информацию.</p>
+</div>
+<div class="card">
+<h3>Предоставляется ли доступ к аккаунтам?</h3>
+<p>Нет. Сервис не осуществляет взлом и не получает доступ к закрытым данным.</p>
+</div>
+<div class="card">
+<h3>Можно ли использовать в коммерческих целях?</h3>
+<p>Использование возможно в рамках действующего законодательства.</p>
+</div>
+</div>
+</section>
+
+<div class="disclaimer">
+Sherlock использует исключительно открытые источники информации. 
+Сервис не предоставляет доступ к закрытым аккаунтам и не осуществляет взлом.
+Используйте инструмент ответственно и в рамках законодательства.
+</div>
+
+</div>
+
+<div class="mobile-cta">
+<a href="https://t.me/Xlocksherbot">Открыть Sherlock</a>
+</div>
+
+</body>
+</html>
