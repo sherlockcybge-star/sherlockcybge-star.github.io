@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: fadeIn 0.4s ease;
+}
+
+h2 {
+  margin: 0 0 25px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+.panel {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.menu li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #0f172a;
+  margin-bottom: 8px;
+  border: 1px solid #334155;
+}
+
+.logout {
+  background: #ef4444;
+}
+
+.logout:hover {
+  background: #dc2626;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="loginBox">
+  <h2>Admin Login</h2>
+
+  <div class="input-group">
+    <input type="text" id="user" placeholder="Username">
+  </div>
+
+  <div class="input-group">
+    <input type="password" id="pass" placeholder="Password">
+  </div>
+
+  <button onclick="login()">Sign In</button>
+</div>
+
+<div class="container panel" id="adminPanel">
+  <h2>Dashboard</h2>
+
+  <ul class="menu">
+    <li>Users</li>
+    <li>Orders</li>
+    <li>Analytics</li>
+    <li>Settings</li>
+  </ul>
+
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script>
+function login() {
+  const u = document.getElementById('user').value;
+  const p = document.getElementById('pass').value;
+
+  if (u === "admin" && p === "admin") {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+  } else {
+    alert("Use admin / admin (demo only)");
+  }
+}
+
+function logout() {
+  document.getElementById("adminPanel").style.display = "none";
+  document.getElementById("loginBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
